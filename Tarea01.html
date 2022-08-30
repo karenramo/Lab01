@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trabajo formulario de autorizacion de viaje</title>
+    <style>
+      .columna {
+        width: 33%;
+        float: left;
+      }
+
+      @media (max-width: 500px) {
+        .columna {
+          width: auto;
+          float: none;
+        }
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+      }
+      h1 {
+        color: rgb(255, 255, 255);
+        text-align: center;
+      }
+      h2 {
+        color: rgb(58, 156, 255);
+      }
+      hr {
+        height: 0px;
+        border: none;
+        border-top: 1px solid black;
+      }
+      .cuadrado{
+        padding:10px 100px 130px 30px;
+        margin:10px;
+        background-color: #fffefe;
+        border: solid 1px rgb(2, 1, 1);
+        color: rgb(0, 0, 0);
+      }
+      .boton {
+        width: 33%;
+        float: left;
+      }
+      .Titulo{
+        padding:10px 10px 10px 10px;
+        margin:10px;
+        background-color: #139dff;
+        border: solid 1px #139dff;
+        color: rgb(254, 248, 248);
+      }
+      .tab{
+        display: inline-block;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    
+  <div class="cuadrado">
+      <div class="Titulo">
+        <h1>Travel Autorization Form</h1>
+      </div>
+    <h2>Sección A: Información del cliente</h2>
+    <hr />
+    <form id="from-order">
+      <p>
+        <label for="cargo"> Cargo:</label>
+        <input
+          type="text"
+          cargo="cargo"
+          id="cargo"
+          placeholder="EJMP:PROFESOR"
+          size="20"
+          maxlength="100"
+          minlength="4"
+          style="text-transform: uppercase"
+          required
+        />
+      </p>
+
+      <p>
+        <label for="name"> Nombre:</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="EJMP:JUAN PABLO"
+          size="20"
+          maxlength="100"
+          minlength="4"
+          style="text-transform: uppercase"
+        />
+      </p>
+
+      <p>
+        <label for="pma"> Primer Apellido:</label>
+        <input
+          type="text"
+          name="pma"
+          id="pma"
+          placeholder="EJMP:CARPIO"
+          maxlength="100"
+          minlength="4"
+          style="text-transform: uppercase"
+        />
+      </p>
+      
+      <p>
+        <label for="sga"> Segundo Apellido:</label>
+        <input
+          type="text"
+          name="sga"
+          id="sga"
+          placeholder="EJMP:CARPIO"
+          maxlength="100"
+          minlength="4"
+          style="text-transform: uppercase"
+        />
+      </p>
+
+      <p>
+        <label for="mail">Correo electrónico:</label>
+        <input type="email" id="mail" name="user_mail" />
+      </p>
+      
+      <p>
+        <label for="numero"> Teléfono:</label>
+        <input type="number" name="numero" id="numero" minlength="9" required/>
+      </p>
+      <h2>Sección B: Información del viaje</h2>
+      <hr />
+      <p>
+        <div class="columna">
+          <p>
+            <label>Nombre de la Aereolinea</label>
+            <select name="Aereolinea">
+              <option>LATAM</option>
+
+              <option>Sky Airline</option>
+
+              <option>Star</option>
+
+              <option>Viva Air</option>
+            </select>
+          </p>
+          <p>
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino", name="destino"
+            required>
+          </p>
+          <p>
+            <label for="fds">Fecha de salida:</label>
+            <input type="date" id="fds", name="fds"
+            value="2022-01-01"
+            min="2022-01-01">
+          </p>
+          <p>
+            <label for="fdr">Fecha de regreso:</label>
+            <input type="date" id="fdr", name="fdr"
+            value="2022-01-01"
+            min="2022-01-01">
+          </p>
+          <p>
+            <label for="ce">Coste estimado:</label>
+            <input type="number" id="ce", name="ce"
+            min="100" max="1000"
+            required>
+          </p>
+          <p>
+            <label for="confirm">¿Incluye la visita al cliente?</label>
+            <input type="checkbox" id="confirm" name="visita" value="incluye visita">
+          </p>
+          <p>
+            <label for="texto">Proposito del viaje: </label>
+            <input type="text" id="texto" name="texto">
+          </p>
+          <p>
+            <br>
+            <br>
+            <br>      
+          <input class="button" type="submit" name="Enviar" />
+          </p>
+
+          <br>
+          <br>
+        </div>
+        <div class="columna">
+          <p>
+            Gastos Adicionales estimados
+            <br />
+          </p>
+          <p class="tab">
+            <label for="alquiler">Alquiler de coche:</label>
+            <input type="number" id="alquiler" name="alquiler" step="0.01" />
+            <label for="hotel"> Hotel:</label>
+            <input type="number" id="hotel" name="hotel" step="0.01" />
+            <label for="comida">Comidas:</label>
+            <input type="number" id="comida" name="comida" step="0.01">
+          </p>
+          <p>
+            <label for="T.e">Total estimado</label>
+            <input type="number" for="ce alquiler hotel comida" placeholder="$0,00"></output>
+          </p>
+          <br>
+          <p>
+            Metodo de pago utilizado:
+          </p>
+          <p class="tab">
+            <input type="radio" name="transporte" value="1">Metálico
+            <input type="radio" name="transporte" value="2">Tarjeta de crédito
+            <input type="radio" name="transporte" value="3">Cheque
+          </p>
+        </div>
+      </p>   
+    </form>
+    <br>
+  </div>
+  </body>
+</html>
